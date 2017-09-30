@@ -1,0 +1,5 @@
+<li [class.completed]= "item.complete">
+  <input class="toggle" type="checkbox" (click)="toggleTodoComplete(item)" [checked]="item.complete">
+  <label >{{item.title}}</label>
+  <button class="destroy" (click)="removeTodo(item)"></button>
+</li>
