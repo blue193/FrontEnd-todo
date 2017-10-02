@@ -4,12 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TodoAppComponent } from './todo-app/todo-app.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import { GuideComponent } from './guide/guide.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 import { TodoService } from './todo.service';
 @NgModule({
   declarations: [
     AppComponent,
     TodoAppComponent,
     TodoItemComponent,
+    GuideComponent,
+    AboutUsComponent,
   ],
   imports: [
     BrowserModule,
