@@ -1,8 +1,10 @@
 <div>
   <ul>
-    <li><a href="">Home</a></li>
-    <li><a class="active" href="guide">Guide</a></li>
-    <li><a href="about-us">About us</a></li>
+    <!--<a routerLink="/crisis-center" routerLinkActive="active">Crisis Center</a>-->
+    <li><a routerLink="" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/guide" routerLinkActive="active">guide</a></li>
+    <li><a routerLink="/about-us">About us</a></li>
   </ul>
 </div>
+<router-outlet></router-outlet>
 <app-todo-app></app-todo-app>
