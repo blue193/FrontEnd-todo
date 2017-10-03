@@ -1,0 +1,16 @@
+a {
+  position: absolute;
+  top: 17px;
+  right: 71px;
+  bottom: 0;
+  margin: auto 0;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+  text-decoration: none;
+  &:hover {
+    color: #cc5c49;
+  }
+}
+

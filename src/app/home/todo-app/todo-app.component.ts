@@ -16,6 +16,9 @@ export class TodoAppComponent implements OnInit {
   }
 
   addTodo() {
+    if ( this.newTodo.title.trim() === '') {
+      return;
+    }
     this.todoService.addTodo(this.newTodo);
     this.newTodo = new Todo();
   }

@@ -2,4 +2,5 @@
   <input class="toggle" type="checkbox" (click)="toggleTodoComplete(item)" [checked]="item.complete">
   <label >{{item.title}}</label>
   <button class="destroy" (click)="removeTodo(item)"></button>
+  <a class="link_more" [routerLink]="['/detail', item.id]">more</a>
 </li>
