@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from '../todo';
-import { TodoService } from '../todo.service';
+import { Todo } from '../../todo';
+import { TodoService } from '../../todo.service';
 
 @Component({
   selector: 'app-todo-app',
@@ -16,6 +16,9 @@ export class TodoAppComponent implements OnInit {
   }
 
   addTodo() {
+    if ( this.newTodo.title.trim() === '') {
+      return;
+    }
     this.todoService.addTodo(this.newTodo);
     this.newTodo = new Todo();
   }

@@ -1,0 +1,10 @@
+<div>
+  <h3>Our People</h3>
+  <ul>
+    <ng-container *ngFor="let person of people">
+      <li>
+        <a [routerLink]="['/person', person.id]">{{person.name}}</a>
+      </li>
+    </ng-container>
+  </ul>
+</div>
