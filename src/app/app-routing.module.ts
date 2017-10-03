@@ -10,12 +10,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'about-us',
-    component: AboutUsComponent
+    component: AboutUsComponent,
   },
-  // {
-  //   path: '**',
-  //   component: AppComponent
-  // }
+  // { path: '',   redirectTo: '/guide', pathMatch: 'full' }
 ];
 
 @NgModule({
