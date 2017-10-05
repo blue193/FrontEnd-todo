@@ -7,9 +7,9 @@ export class PeopleService {
   private people: any[] = [];
   constructor() {
     this.people = [
-      { id: 1, name: 'Kim'},
-      { id: 2, name: 'Ri'},
-      { id: 3, name: 'Pak'}
+      { id: 1, name: 'Kim Yong Chol'},
+      { id: 2, name: 'Ri Gil Nam'},
+      { id: 3, name: 'Pak Chung Song'}
     ];
   }
 

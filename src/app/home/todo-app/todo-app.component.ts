@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../../todo';
-import { TodoService } from '../../todo.service';
+import { TodoService } from '../../service/todo.service';
 
 @Component({
   selector: 'app-todo-app',

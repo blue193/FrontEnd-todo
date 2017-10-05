@@ -16,7 +16,7 @@ import { GuideComponent } from './guide/guide.component';
 
 import { routeConfig } from './app.routes';
 
-import { TodoService } from './todo.service';
+import { TodoService } from './service/todo.service';
 import { PeopleService } from './service/people.service';
 
 import { PersonResolver } from './person.resolve';

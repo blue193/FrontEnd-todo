@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
+import { Todo } from '../todo';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 
 export class TodoService {
-  lastId: number;
+  lastId: number = 0;
   // Placeholder for todo's
   todos: Todo[] = [];
   constructor(
