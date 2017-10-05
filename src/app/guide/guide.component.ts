@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoService } from '../todo.service';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-guide',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./guide.component.sass']
 })
 export class GuideComponent implements OnInit {
-
-  constructor() { }
-
+  todoArray: any[];
+  constructor( private _todoService: TodoService ) {}
   ngOnInit() {
+    this._todoService.getTodosHttp().subscribe(res => {this.todoArray = res; });
   }
 
 }

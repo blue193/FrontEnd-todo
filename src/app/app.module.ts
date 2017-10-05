@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TodoAppComponent } from './home/todo-app/todo-app.component';
@@ -36,6 +37,7 @@ import { TodoResolver } from './todo.resolve';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     RouterModule.forRoot(routeConfig, {
       useHash: false,
       enableTracing: false

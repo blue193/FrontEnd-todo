@@ -1,15 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Todo } from './todo';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+
 @Injectable()
 
 export class TodoService {
-  lastId: number = 0;
+  lastId: number;
   // Placeholder for todo's
   todos: Todo[] = [];
+  constructor(
+    private _http: Http
+  ) {}
 
-  constructor() {
+  getTodoHttp(key: string): Observable<any> {
+    const httpRequest = this._http.get(`api/todo${key}.json`).map(response => response.json());
+    return httpRequest;
   }
 
+  getTodosHttp(): Observable<any[]> {
+    return this._http.get('api/todo-list.json').map((res: Response ) => res.json());
+  }
   // Simulate POST /todos
   addTodo(todo: Todo): TodoService {
     if (!todo.id) {

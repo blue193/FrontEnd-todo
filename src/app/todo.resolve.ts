@@ -9,7 +9,7 @@ export class TodoResolver implements Resolve<any> {
   ){}
 
   resolve( route: ActivatedRouteSnapshot ) {
-    let todoId = route.params['todo-id'];
+    const todoId = route.params['todo-id'];
     return this._todoService.getTodoById(Number(todoId));
   }
 }
