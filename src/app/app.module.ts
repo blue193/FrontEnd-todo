@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { GuideComponent } from './guide/guide.component';
+import { PersonResolver } from './person.resolve';
+import { TodoResolver } from './todo.resolve';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +35,9 @@ import { GuideComponent } from './guide/guide.component';
     RouterModule.forRoot(routeConfig, {
       useHash: false,
       enableTracing: false
-    })
+    }),
   ],
-  providers: [TodoService, PeopleService],
+  providers: [TodoService, PeopleService, PersonResolver, TodoResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

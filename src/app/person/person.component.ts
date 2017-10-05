@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleService } from '../service/people.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-person',
@@ -11,14 +10,13 @@ export class PersonComponent implements OnInit {
   person: any;
 
   constructor(
-    private _router: Router,
     private _activatedRoute: ActivatedRoute,
-    private _peopleService: PeopleService
   ) { }
 
   ngOnInit() {
-    let personId = this._activatedRoute.snapshot.paramMap.get('person-id');
-    this.person = this._peopleService.getPerson(personId);
+    // let personId = this._activatedRoute.snapshot.paramMap.get('person-id');
+    // this.person = this._peopleService.getPerson(personId);
+    this.person = this._activatedRoute.snapshot.data['person'];
   }
 
 }
