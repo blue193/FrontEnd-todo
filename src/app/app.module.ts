@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { TodoAppComponent } from './home/todo-app/todo-app.component';
-import { TodoItemComponent } from './home/todo-app/todo-item/todo-item.component';
+import { TodoItemComponent } from './home/todo-item/todo-item.component';
 import { PeopleComponent } from './people/people.component';
 import { PersonComponent } from './person/person.component';
 import { HomeComponent } from './home/home.component';

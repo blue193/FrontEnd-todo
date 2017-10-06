@@ -18,6 +18,7 @@ export class DetailComponent implements OnInit {
     // let itemId = this._activatedRoute.snapshot.paramMap.get('todo-id');
     // this.todo_item = this._todoService.getTodoById(Number(itemId));
     this.todo_item = this._activatedRoute.snapshot.data['todoItem'];
+    console.log('detail component todoitem', this.todo_item);
   }
 
 }

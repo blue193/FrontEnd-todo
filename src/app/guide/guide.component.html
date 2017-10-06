@@ -2,7 +2,7 @@
   <h3>Select any documentation</h3>
   <ul>
     <li *ngFor="let todo of todoArray; let i = index">
-      "{{i}}" <a [routerLink]="['/about-us', todo.id]">{{todo.title}}</a>
+      "{{i + 1}}" <a [routerLink]="['/about-us', todo.id]">{{todo.title}}</a>
     </li>
   </ul>
 </div>

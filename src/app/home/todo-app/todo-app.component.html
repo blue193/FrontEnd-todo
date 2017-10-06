@@ -3,14 +3,14 @@
     <h1>Hello World</h1>
     <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
   </header>
-  <section class="main" *ngIf="todos.length > 0">
+  <section class="main" *ngIf="todoArray && todoArray.length > 0">
     <ul class="todo-list">
-      <li *ngFor="let todo of todos" >
-          <app-todo-item [item]="todo"></app-todo-item>
+      <li *ngFor="let todo of todoArray" [class.completed]="todo.complete">
+          <app-todo-item [item]="todo" (updatedTodos)="onUpdatedTodos($event)"></app-todo-item>
       </li>
     </ul>
   </section>
-  <footer class="footer" *ngIf="todos.length > 0">
-    <span class="todo-count"><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+  <footer class="footer" *ngIf="todoArray && todoArray.length > 0">
+    <span class="todo-count"><strong>{{todoArray.length}}</strong> {{todoArray.length == 1 ? 'item' : 'items'}} left</span>
   </footer>
 </section>
