@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 
 export class TodoService {
-  lastId: number = 0;
+  lastId: Number = 0;
   todos: Todo[] = [];
   headers: Headers;
   options: RequestOptions;
@@ -20,8 +20,9 @@ export class TodoService {
   }
 
   getTodoHttp(key: string): Observable<any> {
-    const httpRequest = this._http.get(`api/todo${key}.json`).map(response => response.json());
-    return httpRequest;
+ //    const httpRequest = this._http.get(`api/todo${key}.json`).map(response => response.json());
+ //    return httpRequest;
+    return this._http.get(`api/todo${key}.json`).map(response => response.json());
   }
 
   getTodosHttp(): Observable<any[]> {
@@ -29,12 +30,15 @@ export class TodoService {
   }
 
   // Simulate GET /todos
+  // getAllTodos(): Observable<Todo[]> {
+  //   return this._http.get(this.url, this.options)
+  //     .map((res: Response) => res.json())
+  //     .catch((err: any) => Observable.throw(err.json().error || 'server error'));
+  // }
   getAllTodos(): Observable<Todo[]> {
-    return this._http.get(this.url, this.options)
-      .map((res: Response) => res.json())
-      .catch((err: any) => Observable.throw(err.json().error || 'server error'));
-  }
-
+      return this._http.get(this.url)
+        .map(res => res.json());
+    }
   // Simulate GET /todos/:id
   getTodoById(id: string): Observable<Todo> {
     return this._http.get(this.url + id, this.options)
@@ -44,7 +48,7 @@ export class TodoService {
 
   // Simulate POST /todos
   addTodo(todo: Todo): Observable<Todo> {
-    let body = JSON.stringify(todo);console.log("here is service", body);
+    let body = JSON.stringify(todo);
     return this._http.post(this.url, body, this.options)
       .map((res: Response) => res.json())
       .catch((err: any) => Observable.throw(err.json().error || 'server error'));
@@ -57,7 +61,7 @@ export class TodoService {
       .catch((err: any) => Observable.throw(err.json().error || 'server error'));
   }
 // Toggle todo complete
-  toggleTodoComplete(id: number, todo: Todo): Observable<Todo>{
+  toggleTodoComplete(id: number, todo: Todo): Observable<Todo> {
       return this._http.put(this.url + id, todo, this.options)
         .map((res: Response) => res.json())
         .catch((err: any) => Observable.throw(err.json().error || 'server error'));
