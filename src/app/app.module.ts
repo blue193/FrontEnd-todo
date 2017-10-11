@@ -21,6 +21,8 @@ import { PeopleService } from './service/people.service';
 
 import { PersonResolver } from './person.resolve';
 import { TodoResolver } from './todo.resolve';
+import { Pipe1Pipe } from './pipe/pipe1.pipe';
+import { Pipe2Pipe } from './pipe/pipe2.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { TodoResolver } from './todo.resolve';
     HomeComponent,
     DetailComponent,
     AboutUsComponent,
-    GuideComponent
+    GuideComponent,
+    Pipe1Pipe,
+    Pipe2Pipe
   ],
   imports: [
     BrowserModule,

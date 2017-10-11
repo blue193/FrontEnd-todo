@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter} from '@angular/core';
 import { Todo } from '../../todo';
 import { TodoService } from '../../service/todo.service';
 
@@ -10,6 +10,7 @@ import { TodoService } from '../../service/todo.service';
 export class TodoAppComponent implements OnInit {
   newTodo: Todo = new Todo();
   todoArray: Todo[];
+  updatedTodos: EventEmitter<boolean> = new  EventEmitter();
   ngOnInit() {
     this.todos();
   }
@@ -18,15 +19,13 @@ export class TodoAppComponent implements OnInit {
   }
 
   addTodo() {
-    if ( this.newTodo.title.trim() === '') {
-      return;
+    if ( this.newTodo.title.trim() !== '') {
+      this.todoService.addTodo(this.newTodo)
+        .subscribe(res => {
+          this.newTodo = new Todo();
+          this.todos();
+        });
     }
-    this.todoService.addTodo(this.newTodo)
-      .subscribe( res => {
-        console.log('add item', res);
-      });
-    this.newTodo = new Todo();
-    this.todos();
   }
 
   todos() {

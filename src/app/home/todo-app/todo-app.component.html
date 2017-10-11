@@ -1,7 +1,8 @@
 <section class="todoapp">
   <header class="header">
     <h1>Hello World</h1>
-    <input class="new-todo" placeholder="What needs to be done?" autofocus="" [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+    <input class="new-todo" placeholder="What needs to be done?" autofocus=""
+           [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
   </header>
   <section class="main" *ngIf="todoArray && todoArray.length > 0">
     <ul class="todo-list">

@@ -3,7 +3,7 @@
   <ul>
     <ng-container *ngFor="let person of people">
       <li>
-        <a [routerLink]="['/person', person.id]">{{person.name}}</a>
+        <a [routerLink]="['/person', person.id]">{{person.name|pipe1}}</a>
       </li>
     </ng-container>
   </ul>

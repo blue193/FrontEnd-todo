@@ -7,7 +7,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 
 export class TodoService {
-  lastId: Number = 0;
+  lastId: number = 0;
   todos: Todo[] = [];
   headers: Headers;
   options: RequestOptions;
@@ -20,21 +20,12 @@ export class TodoService {
   }
 
   getTodoHttp(key: string): Observable<any> {
- //    const httpRequest = this._http.get(`api/todo${key}.json`).map(response => response.json());
- //    return httpRequest;
     return this._http.get(`api/todo${key}.json`).map(response => response.json());
   }
 
   getTodosHttp(): Observable<any[]> {
     return this._http.get('api/todo-list.json').map((res: Response ) => res.json());
   }
-
-  // Simulate GET /todos
-  // getAllTodos(): Observable<Todo[]> {
-  //   return this._http.get(this.url, this.options)
-  //     .map((res: Response) => res.json())
-  //     .catch((err: any) => Observable.throw(err.json().error || 'server error'));
-  // }
   getAllTodos(): Observable<Todo[]> {
       return this._http.get(this.url)
         .map(res => res.json());
@@ -48,7 +39,12 @@ export class TodoService {
 
   // Simulate POST /todos
   addTodo(todo: Todo): Observable<Todo> {
-    let body = JSON.stringify(todo);
+    if (!todo.order) {
+      todo.order = ++this.lastId;
+    }
+    const body = JSON.stringify(todo);
+
+    console.log(todo.order, ' = todo order id');
     return this._http.post(this.url, body, this.options)
       .map((res: Response) => res.json())
       .catch((err: any) => Observable.throw(err.json().error || 'server error'));

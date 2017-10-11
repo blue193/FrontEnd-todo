@@ -1,6 +1,6 @@
 <li [class.completed]= "item.complete">
   <input class="toggle" type="checkbox" (click)="toggleTodoComplete(item)" [checked]="item.complete">
-  <label >{{item.title}}</label>
+  <label >{{item.title | pipe1 | pipe2: item.order}}</label>
   <button class="destroy" (click)="removeTodo(item)"></button>
   <a class="link_more" [routerLink]="['/detail', item._id]">more</a>
 </li>
