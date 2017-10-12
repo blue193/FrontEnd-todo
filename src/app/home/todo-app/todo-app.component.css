@@ -1,0 +1,19 @@
+.comment {
+  width: 435px;
+  margin: auto;
+  background: beige;
+  height: 26px;
+  padding: 10px;
+}
+
+.label-1 {
+  min-width: 100px;
+  display: inline-block;
+  margin: auto 5%;
+  text-align: left;
+}
+
+.label-2 {
+  margin-right: 22px;
+  text-align: right;
+}

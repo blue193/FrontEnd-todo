@@ -1,3 +1,7 @@
+li {
+  display: flex;
+}
+
 a {
   position: absolute;
   top: 17px;
@@ -13,4 +17,29 @@ a {
     color: #cc5c49;
   }
 }
+.input-log {
+  border-right: darkcyan;
+  width: 158px;
+  height: 29px;
+  padding: 0 37px 0 0;
+  margin-top: 13px;
+}
 
+.verify {
+  position: absolute;
+  right: 40px;
+  top: 14px;
+  width: 73px;
+  height: 31px;
+  margin: auto;
+  border: 1px #17e617 solid;
+  border-radius: 40px;
+  font-size: 19px;
+  color: white;
+  background-color: chartreuse;
+}
+
+label {
+  min-width: 62px;
+  display: inline-block;
+}

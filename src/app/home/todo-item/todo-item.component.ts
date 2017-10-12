@@ -9,6 +9,9 @@ import { TodoService } from '../../service/todo.service';
 export class TodoItemComponent implements OnInit {
   @Input() item: Todo;
   @Output() updatedTodos: EventEmitter<boolean> = new  EventEmitter();
+  @Input() logVal: String = '';
+  @Output() clickedMe: EventEmitter<any> = new EventEmitter();
+  input_val: string;
   constructor(private todoService: TodoService) { }
 
   ngOnInit() {
@@ -27,5 +30,17 @@ export class TodoItemComponent implements OnInit {
         console.log('remove item', res);
         this.updatedTodos.emit(true);
       });
+  }
+
+  verify() {
+    let value;
+    if (this.logVal.trim() !== '') {
+     value = {
+        'label': this.item.title,
+        'val': this.logVal
+      };
+      this.clickedMe.emit(value);
+      this.logVal = '';
+    }
   }
 }

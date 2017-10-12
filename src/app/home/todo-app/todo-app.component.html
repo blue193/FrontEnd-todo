@@ -1,13 +1,20 @@
 <section class="todoapp">
   <header class="header">
-    <h1>Hello World</h1>
+    <h1>Loading...</h1>
     <input class="new-todo" placeholder="What needs to be done?" autofocus=""
-           [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
+           [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()" disabled="true">
   </header>
   <section class="main" *ngIf="todoArray && todoArray.length > 0">
     <ul class="todo-list">
       <li *ngFor="let todo of todoArray" [class.completed]="todo.complete">
-          <app-todo-item [item]="todo" (updatedTodos)="onUpdatedTodos($event)"></app-todo-item>
+          <app-todo-item [item]="todo" (updatedTodos)="onUpdatedTodos($event)" (clickedMe)="onClickItem($event)"></app-todo-item>
+      </li>
+      <li class="comment" style="color: #ac9de2;">Verify Log...</li>
+      <li class="comment" *ngFor="let comment of valComment">
+        <span class="label">
+          <span class="label-1">{{comment['label'] | pipe1}}</span>:
+          <span class="label-1">{{comment['val']}}</span><br>
+        </span>
       </li>
     </ul>
   </section>

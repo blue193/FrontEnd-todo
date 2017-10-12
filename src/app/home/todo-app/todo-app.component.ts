@@ -10,7 +10,7 @@ import { TodoService } from '../../service/todo.service';
 export class TodoAppComponent implements OnInit {
   newTodo: Todo = new Todo();
   todoArray: Todo[];
-  updatedTodos: EventEmitter<boolean> = new  EventEmitter();
+  valComment: String[] = [];
   ngOnInit() {
     this.todos();
   }
@@ -39,6 +39,12 @@ export class TodoAppComponent implements OnInit {
     if (state) {
       console.log('state', state);
       this.todos();
+    }
+  }
+  onClickItem(str) {
+    if (str) {
+      console.log('aaaaaaaaaaa', str.label);
+      this.valComment.push(str);
     }
   }
 }
