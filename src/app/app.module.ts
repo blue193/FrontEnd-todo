@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { PersonResolver } from './person.resolve';
 import { TodoResolver } from './todo.resolve';
 import { Pipe1Pipe } from './pipe/pipe1.pipe';
 import { Pipe2Pipe } from './pipe/pipe2.pipe';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,13 @@ import { Pipe2Pipe } from './pipe/pipe2.pipe';
     AboutUsComponent,
     GuideComponent,
     Pipe1Pipe,
-    Pipe2Pipe
+    Pipe2Pipe,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(routeConfig, {
       useHash: false,

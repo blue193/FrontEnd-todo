@@ -1,13 +1,14 @@
 <section class="todoapp">
   <header class="header">
-    <h1>Loading...</h1>
+    <h1></h1>
     <input class="new-todo" placeholder="What needs to be done?" autofocus=""
-           [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()" disabled="true">
+           [(ngModel)]="newTodo.title" (keyup.enter)="addTodo()">
   </header>
   <section class="main" *ngIf="todoArray && todoArray.length > 0">
     <ul class="todo-list">
       <li *ngFor="let todo of todoArray" [class.completed]="todo.complete">
-          <app-todo-item [item]="todo" (updatedTodos)="onUpdatedTodos($event)" (clickedMe)="onClickItem($event)"></app-todo-item>
+          <app-todo-item [item]="todo" (updatedTodos)="onUpdatedTodos($event)" (clickedMe)="onClickItem($event)">
+          </app-todo-item>
       </li>
       <li class="comment" style="color: #ac9de2;">Verify Log...</li>
       <li class="comment" *ngFor="let comment of valComment">

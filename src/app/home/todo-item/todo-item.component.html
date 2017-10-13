@@ -3,6 +3,6 @@
   <label>{{item.title | pipe1 | pipe2: item.order}}</label>
   <input class="input-log" [(ngModel)] = "logVal" type="text">
   <button class="verify" (click)="verify()">verify</button>
-  <!--<button class="destroy" (click)="removeTodo(item)"></button>-->
-  <!--<a class="link_more" [routerLink]="['/detail', item._id]">more</a>-->
+  <button class="destroy" (click)="removeTodo(item)"></button>
+  <a class="link_more" [routerLink]="['/detail', item._id]">more</a>
 </li>
