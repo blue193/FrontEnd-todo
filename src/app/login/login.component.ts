@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   idCtrl = new FormControl('', [Validators.required, Validators.minLength(6)]);
-  nameCtrl = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  passCtrl = new FormControl('', [Validators.required, Validators.minLength(3)]);
   constructor(
     private fb: FormBuilder, private router: Router
   ) { }
   loginForm = this.fb.group({
     id: this.idCtrl,
-    name: this.nameCtrl
+    password: this.passCtrl
   });
   ngOnInit() {
   }
   redirect() {
-    alert('welcome to ' + this.loginForm.value.name + ' !');
+    //alert('welcome to ' + this.loginForm.value.name + ' !');
     this.router.navigate(['/home']);
   }
 }
